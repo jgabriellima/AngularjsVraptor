@@ -1,0 +1,79 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="js/run_prettify.js"></script>
+
+<h3>Implementando um projeto Java utilizando AngularJS + VRaptor + Hibernate + MySQL</h3>
+
+<div>
+    <p>Este é um projeto exemplo do uso da arquitetura AngularJS + VRaptor + Hibernate + MySQL. </p>
+</div>
+<div>
+    <a href="http://www.angularjs.org" target="_blank"><h4>AngularJS</h4></a>
+    <p align="justify">
+        AngularJS é um dos mais novos lançamento do time de desenvolvedores do Google. Diferentemente de outros frameworks JavaScript, ele adota uma abordagem mais ligada à sintaxe HTML, funcionando como uma espécie de extensão da linguagem.
+    </p>
+</div>
+<div>
+    <a href="http://www.vraptor.caelum.com.br" target="_blank"><h4>VRaptor</h4></a>
+    <p align="justify">
+        VRaptor é um framework MVC web para desenvolvimento Java rápido. Criado em 2003 no IME-USP, teve sua versão 2.0 lançada em 2005 e a versão 3.0 em 2009. Esta última versão conta com mais de 30 mil downloads. Atualmente mantido pela Caelum e diversos desenvolvedores de outras empresas. Para um rápido uso do VRaptor, baixe o projeto vazio (blank-project) e importe-o pelo Eclipse. O VRaptor3 é um framework MVC em Java focado no desenvolvimento rápido e simples, e na fácil manutenção do código. Usando muitas idéias e boas práticas que surgiram nos últimos anos, como Convenção sobre Configuração, Injeção de Dependências e um modelo REST, você pode fazer sua aplicação com este framework de uma maneira bastante agradável e produtiva. É também uma iniciativa brasileira, nascida dentro da Universidade de São Paulo, usada em muitas empresas.
+    </p>
+</div>
+<div>
+    <h5>Criando o projeto no Netbeans</h5>
+    <p align="justify">
+        Primeiramente, vamos criar um projeto web Maven (http://pt.wikipedia.org/wiki/Apache_Maven) como mostrado na figura 1. Configure os campos de ‘Nome do Projeto’, ‘Localização do Projeto’ e os demais campos se desejar. Após gerado a estrutura do projeto será como apresentado na figura 2
+    </p>
+    <p>
+        <img src="img/steps/1.png"/>
+    </p>
+    <p>
+        <img src="img/steps/2.png"/>
+    </p>
+    <h5>Configurando o pom.xml</h5>
+    <p>
+        Com o projeto pronto, vamos analisar o arquivo ‘pom.xml’ localizado em uma pasta ‘Arquivos do Projeto’, que descreve o projeto que será  construído, suas dependências sobre módulos e componentes externos, a ordem de compilação, diretórios e plug-ins necessários. Ele vem com objetivos prá-definidos para realizar certas tarefas bem definidas como compilação de código e seu empacotamento.
+    </p>
+    <p>
+        Na tag ‘dependencies’ você deverá substituir por:
+    </p>
+    <p>
+        Após essa etapa, vamos clicar com o botão direito do mouse no projeto e escolher a opção ‘Construir com Dependências’, desta forma o projeto será atualizado e as dependências serão construídas.
+    </p>
+    <h5>Configurando o web.xml</h5>
+    <p>
+         A única configuração necessária no web.xml é o filtro do VRaptor:
+    </p>
+    <code>
+    <pre>
+        <filter>
+    <filter-name>vraptor</filter-name>
+    <filter-class>br.com.caelum.vraptor.VRaptor</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>vraptor</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher>
+</filter-mapping>
+
+    </pre>
+    </code>
+
+</div>
+<hr/>
+<div>
+    <h4>Construindo a aplicação</h4>
+
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id))
+            return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=131521290358247";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-href="http://agendajsjava.aws.af.cm/" data-width="700" data-num-posts="10"></div>
